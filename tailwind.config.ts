@@ -1,4 +1,4 @@
-import type { Config } from "tailwindcss";
+import type { Config } from "tailwindcss"
 
 const config: Config = {
   content: [
@@ -7,13 +7,12 @@ const config: Config = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    extend: {
-      colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
-      },
+    fontFamily: {
+      sans: ["var(--font-plus-jakarta-sans)", "sans-serif"],
+      serif: ["var(--font-playfair-display)", "serif"],
     },
+    extend: {},
   },
   plugins: [],
-};
-export default config;
+}
+export default config
