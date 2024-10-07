@@ -1,0 +1,39 @@
+{
+  "format": "custom",
+  "id": "settings",
+  "label": "Site Settings",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "navLinks": {
+        "type": "Group",
+        "config": {
+          "label": "Navigation Links",
+          "repeat": true,
+          "fields": {
+            "link": {
+              "type": "Link",
+              "config": {
+                "label": "Link",
+                "placeholder": "",
+                "allowTargetBlank": true,
+                "select": null,
+                "allowText": true
+              }
+            },
+            "isCta": {
+              "type": "Boolean",
+              "config": {
+                "label": "Call to Action",
+                "placeholder_false": "Link",
+                "placeholder_true": "Button",
+                "default_value": false
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
