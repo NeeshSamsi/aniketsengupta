@@ -12,7 +12,7 @@ export default async function Navbar() {
   return (
     <nav className="bg-primary-800 text-primary-100">
       <div className="container mx-auto flex items-center justify-between px-8 py-6">
-        <Link href="/" className="">
+        <Link href="/" className="aspect-[10/1] h-6">
           <Logo />
         </Link>
 
