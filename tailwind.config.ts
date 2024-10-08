@@ -11,7 +11,17 @@ const config: Config = {
       sans: ["var(--font-plus-jakarta-sans)", "sans-serif"],
       serif: ["var(--font-playfair-display)", "serif"],
     },
-    extend: {},
+    extend: {
+      colors: {
+        primary: {
+          800: "#451B03",
+          700: "#78350F",
+          600: "#B4540A",
+          300: "#FEF3C7",
+          100: "#FFFBEB",
+        },
+      },
+    },
   },
   plugins: [],
 }
