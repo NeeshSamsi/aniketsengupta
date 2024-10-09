@@ -1,3 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.grid-stack {
+  display: grid;
+  & > * {
+    grid-row: 1;
+    grid-column: 1;
+  }
+}
