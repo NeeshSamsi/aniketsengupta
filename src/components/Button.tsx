@@ -17,7 +17,7 @@ export default function Button({ children, link, size, className }: Props) {
       className={cn(
         "bg-primary-100 text-primary-800",
         {
-          "": size === "sm",
+          "px-3 py-2": size === "sm",
           "px-4 py-2 text-base sm:text-lg lg:px-6 lg:py-4 lg:text-xl":
             size === "base",
         },
