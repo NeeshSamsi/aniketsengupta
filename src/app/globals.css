@@ -9,3 +9,15 @@
     grid-column: 1;
   }
 }
+
+.hover-underline-animation {
+  @apply relative inline-block;
+}
+
+.hover-underline-animation::after {
+  @apply absolute bottom-0 left-0 h-[1px] w-full origin-left scale-x-0 bg-black transition-all ease-in-out content-[''] dark:bg-primary-300;
+}
+
+.hover-underline-animation:hover::after {
+  @apply scale-x-100;
+}
