@@ -14,6 +14,8 @@
     "@prismicio/next": "^1.7.0",
     "@prismicio/react": "^2.9.0",
     "clsx": "^2.1.1",
+    "framer-motion": "^11.11.4",
+    "hamburger-react": "^2.5.1",
     "next": "14.2.14",
     "prettier": "^3.3.3",
     "prettier-plugin-tailwindcss": "^0.6.8",
