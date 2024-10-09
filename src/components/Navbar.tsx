@@ -20,7 +20,7 @@ export default function Navbar({ navLinks }: Props) {
   return (
     <nav className="fixed top-0 w-full bg-primary-800 text-primary-100">
       <div className="container mx-auto flex items-center justify-between px-8 py-2 lg:py-6">
-        <Link href="/" className="aspect-[10/1] h-6">
+        <Link href="/" className="aspect-[10/1] h-5 sm:h-6">
           <Logo />
         </Link>
 
