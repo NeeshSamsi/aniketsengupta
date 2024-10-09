@@ -4,7 +4,7 @@ import type * as prismic from "@prismicio/client"
 
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] }
 
-type PageDocumentDataSlicesSlice = HeroSlice
+type PageDocumentDataSlicesSlice = AccordionInfoSlice | HeroSlice
 
 /**
  * Content for Page documents
@@ -126,6 +126,98 @@ export type SettingsDocument<Lang extends string = string> =
 export type AllDocumentTypes = PageDocument | SettingsDocument
 
 /**
+ * Item in *AccordionInfo → Default → Primary → Practice Areas*
+ */
+export interface AccordionInfoSliceDefaultPrimaryPracticeAreasItem {
+  /**
+   * Title field in *AccordionInfo → Default → Primary → Practice Areas*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: accordion_info.default.primary.practiceAreas[].title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title: prismic.KeyTextField
+
+  /**
+   * Description field in *AccordionInfo → Default → Primary → Practice Areas*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: accordion_info.default.primary.practiceAreas[].description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description: prismic.RichTextField
+}
+
+/**
+ * Primary content in *AccordionInfo → Default → Primary*
+ */
+export interface AccordionInfoSliceDefaultPrimary {
+  /**
+   * Subheading field in *AccordionInfo → Default → Primary*
+   *
+   * - **Field Type**: Title
+   * - **Placeholder**: *None*
+   * - **API ID Path**: accordion_info.default.primary.subheading
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  subheading: prismic.TitleField
+
+  /**
+   * Section Heading field in *AccordionInfo → Default → Primary*
+   *
+   * - **Field Type**: Title
+   * - **Placeholder**: *None*
+   * - **API ID Path**: accordion_info.default.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  heading: prismic.TitleField
+
+  /**
+   * Practice Areas field in *AccordionInfo → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: accordion_info.default.primary.practiceAreas[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  practiceAreas: prismic.GroupField<
+    Simplify<AccordionInfoSliceDefaultPrimaryPracticeAreasItem>
+  >
+}
+
+/**
+ * Default variation for AccordionInfo Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type AccordionInfoSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<AccordionInfoSliceDefaultPrimary>,
+  never
+>
+
+/**
+ * Slice variation for *AccordionInfo*
+ */
+type AccordionInfoSliceVariation = AccordionInfoSliceDefault
+
+/**
+ * AccordionInfo Shared Slice
+ *
+ * - **API ID**: `accordion_info`
+ * - **Description**: AccordionInfo
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type AccordionInfoSlice = prismic.SharedSlice<
+  "accordion_info",
+  AccordionInfoSliceVariation
+>
+
+/**
  * Primary content in *Hero → Default → Primary*
  */
 export interface HeroSliceDefaultPrimary {
@@ -225,6 +317,11 @@ declare module "@prismicio/client" {
       SettingsDocumentData,
       SettingsDocumentDataNavLinksItem,
       AllDocumentTypes,
+      AccordionInfoSlice,
+      AccordionInfoSliceDefaultPrimaryPracticeAreasItem,
+      AccordionInfoSliceDefaultPrimary,
+      AccordionInfoSliceVariation,
+      AccordionInfoSliceDefault,
       HeroSlice,
       HeroSliceDefaultPrimary,
       HeroSliceVariation,
