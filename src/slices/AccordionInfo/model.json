@@ -24,7 +24,7 @@
         "heading": {
           "type": "StructuredText",
           "config": {
-            "label": "Section Heading",
+            "label": "Heading",
             "placeholder": "",
             "allowTargetBlank": false,
             "single": "heading2"
