@@ -1,8 +1,8 @@
 import type { Metadata } from "next"
 
+import { client } from "@/lib/prismic"
 import { Playfair_Display, Plus_Jakarta_Sans } from "next/font/google"
 import "./globals.css"
-
 import Navbar from "@/components/Navbar"
 
 const playfairDisplay = Playfair_Display({
@@ -27,12 +27,16 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode
 }>) {
+  const {
+    data: { navLinks },
+  } = await client.getSingle("settings")
+
   return (
     <html lang="en">
       <body
         className={`${playfairDisplay.variable} ${plusJakartaSans.variable} font-sans antialiased`}
       >
-        <Navbar />
+        <Navbar navLinks={navLinks} />
         {children}
       </body>
     </html>
