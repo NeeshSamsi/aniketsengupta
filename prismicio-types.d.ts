@@ -4,7 +4,11 @@ import type * as prismic from "@prismicio/client"
 
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] }
 
-type PageDocumentDataSlicesSlice = AboutSlice | AccordionInfoSlice | HeroSlice
+type PageDocumentDataSlicesSlice =
+  | PublicationsSlice
+  | AboutSlice
+  | AccordionInfoSlice
+  | HeroSlice
 
 /**
  * Content for Page documents
@@ -351,6 +355,61 @@ type HeroSliceVariation = HeroSliceDefault
  */
 export type HeroSlice = prismic.SharedSlice<"hero", HeroSliceVariation>
 
+/**
+ * Primary content in *Publications → Default → Primary*
+ */
+export interface PublicationsSliceDefaultPrimary {
+  /**
+   * Subheading field in *Publications → Default → Primary*
+   *
+   * - **Field Type**: Title
+   * - **Placeholder**: *None*
+   * - **API ID Path**: publications.default.primary.subheading
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  subheading: prismic.TitleField
+
+  /**
+   * Heading field in *Publications → Default → Primary*
+   *
+   * - **Field Type**: Title
+   * - **Placeholder**: *None*
+   * - **API ID Path**: publications.default.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  heading: prismic.TitleField
+}
+
+/**
+ * Default variation for Publications Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type PublicationsSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<PublicationsSliceDefaultPrimary>,
+  never
+>
+
+/**
+ * Slice variation for *Publications*
+ */
+type PublicationsSliceVariation = PublicationsSliceDefault
+
+/**
+ * Publications Shared Slice
+ *
+ * - **API ID**: `publications`
+ * - **Description**: Publications
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type PublicationsSlice = prismic.SharedSlice<
+  "publications",
+  PublicationsSliceVariation
+>
+
 declare module "@prismicio/client" {
   interface CreateClient {
     (
@@ -392,6 +451,10 @@ declare module "@prismicio/client" {
       HeroSliceDefaultPrimary,
       HeroSliceVariation,
       HeroSliceDefault,
+      PublicationsSlice,
+      PublicationsSliceDefaultPrimary,
+      PublicationsSliceVariation,
+      PublicationsSliceDefault,
     }
   }
 }
