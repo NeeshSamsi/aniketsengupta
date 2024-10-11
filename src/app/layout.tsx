@@ -33,7 +33,7 @@ export default async function RootLayout({
   } = await client.getSingle("settings")
 
   return (
-    <html lang="en">
+    <html lang="en" className="scroll-p-16 scroll-smooth">
       <body
         className={`${playfairDisplay.variable} ${plusJakartaSans.variable} font-sans antialiased`}
       >
