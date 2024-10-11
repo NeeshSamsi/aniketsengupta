@@ -4,11 +4,10 @@ import { type Content } from "@prismicio/client"
 import { useState } from "react"
 
 import Link from "next/link"
-import { PrismicNextLink } from "@prismicio/next"
 import { Squash as Hamburger } from "hamburger-react"
 import { AnimatePresence, motion } from "framer-motion"
 import Logo from "./Logo"
-import Button from "./Button"
+import NavLinks from "./NavLinks"
 
 type Props = {
   navLinks: Content.SettingsDocumentData["navLinks"]
@@ -57,18 +56,3 @@ export default function Navbar({ navLinks }: Props) {
     </nav>
   )
 }
-
-const NavLinks = ({ navLinks }: Props) =>
-  navLinks.map(({ link, isCta }, i) =>
-    isCta ? (
-      <Button key={`nav-link-${i}`} link={link} size="sm" className="w-fit">
-        {link.text}
-      </Button>
-    ) : (
-      <PrismicNextLink
-        key={`nav-link-${i}`}
-        field={link}
-        className="hover-underline-animation w-fit transition-all hover:text-primary-300"
-      />
-    ),
-  )
