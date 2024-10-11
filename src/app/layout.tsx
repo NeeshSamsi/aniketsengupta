@@ -4,6 +4,7 @@ import { client } from "@/lib/prismic"
 import { Playfair_Display, Plus_Jakarta_Sans } from "next/font/google"
 import "./globals.css"
 import Navbar from "@/components/Navbar"
+import Footer from "@/components/Footer"
 
 const playfairDisplay = Playfair_Display({
   subsets: ["latin"],
@@ -38,6 +39,7 @@ export default async function RootLayout({
       >
         <Navbar navLinks={navLinks} />
         {children}
+        <Footer />
       </body>
     </html>
   )
