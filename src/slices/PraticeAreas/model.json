@@ -1,7 +1,7 @@
 {
   "id": "accordion_info",
   "type": "SharedSlice",
-  "name": "AccordionInfo",
+  "name": "PraticeAreas",
   "description": "AccordionInfo",
   "variations": [
     {

@@ -410,11 +410,11 @@ type AboutSliceVariation = AboutSliceDefault
 export type AboutSlice = prismic.SharedSlice<"about", AboutSliceVariation>
 
 /**
- * Item in *AccordionInfo → Default → Primary → Practice Areas*
+ * Item in *PraticeAreas → Default → Primary → Practice Areas*
  */
 export interface AccordionInfoSliceDefaultPrimaryPracticeAreasItem {
   /**
-   * Title field in *AccordionInfo → Default → Primary → Practice Areas*
+   * Title field in *PraticeAreas → Default → Primary → Practice Areas*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
@@ -424,7 +424,7 @@ export interface AccordionInfoSliceDefaultPrimaryPracticeAreasItem {
   title: prismic.KeyTextField
 
   /**
-   * Description field in *AccordionInfo → Default → Primary → Practice Areas*
+   * Description field in *PraticeAreas → Default → Primary → Practice Areas*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
@@ -435,11 +435,11 @@ export interface AccordionInfoSliceDefaultPrimaryPracticeAreasItem {
 }
 
 /**
- * Primary content in *AccordionInfo → Default → Primary*
+ * Primary content in *PraticeAreas → Default → Primary*
  */
 export interface AccordionInfoSliceDefaultPrimary {
   /**
-   * Subheading field in *AccordionInfo → Default → Primary*
+   * Subheading field in *PraticeAreas → Default → Primary*
    *
    * - **Field Type**: Title
    * - **Placeholder**: *None*
@@ -449,7 +449,7 @@ export interface AccordionInfoSliceDefaultPrimary {
   subheading: prismic.TitleField
 
   /**
-   * Heading field in *AccordionInfo → Default → Primary*
+   * Heading field in *PraticeAreas → Default → Primary*
    *
    * - **Field Type**: Title
    * - **Placeholder**: *None*
@@ -459,7 +459,7 @@ export interface AccordionInfoSliceDefaultPrimary {
   heading: prismic.TitleField
 
   /**
-   * Practice Areas field in *AccordionInfo → Default → Primary*
+   * Practice Areas field in *PraticeAreas → Default → Primary*
    *
    * - **Field Type**: Group
    * - **Placeholder**: *None*
@@ -472,7 +472,7 @@ export interface AccordionInfoSliceDefaultPrimary {
 }
 
 /**
- * Default variation for AccordionInfo Slice
+ * Default variation for PraticeAreas Slice
  *
  * - **API ID**: `default`
  * - **Description**: Default
@@ -485,12 +485,12 @@ export type AccordionInfoSliceDefault = prismic.SharedSliceVariation<
 >
 
 /**
- * Slice variation for *AccordionInfo*
+ * Slice variation for *PraticeAreas*
  */
 type AccordionInfoSliceVariation = AccordionInfoSliceDefault
 
 /**
- * AccordionInfo Shared Slice
+ * PraticeAreas Shared Slice
  *
  * - **API ID**: `accordion_info`
  * - **Description**: AccordionInfo
