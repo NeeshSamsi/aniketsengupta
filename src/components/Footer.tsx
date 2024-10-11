@@ -13,7 +13,7 @@ export default async function Footer() {
     <footer className="bg-primary-800 text-base text-primary-100 lg:text-lg">
       <div className="container mx-auto space-y-16 px-8 py-12 lg:py-24 xl:py-40">
         <div className="flex flex-col items-center justify-between gap-12 sm:flex-row sm:items-start">
-          <div className="sm:text-star flex flex-col items-center gap-4 text-center sm:items-start">
+          <div className="sm:text-star flex flex-col items-center gap-4 text-center sm:items-start sm:text-start">
             <div className="aspect-[10/1] w-60">
               <Logo />
             </div>
