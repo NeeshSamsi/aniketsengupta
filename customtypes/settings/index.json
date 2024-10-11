@@ -33,6 +33,37 @@
             }
           }
         }
+      },
+      "linkedin": {
+        "type": "Link",
+        "config": {
+          "label": "LinkedIn",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "select": null,
+          "allowText": false
+        }
+      },
+      "number": {
+        "type": "Text",
+        "config": {
+          "label": "Phone Number",
+          "placeholder": ""
+        }
+      },
+      "email": {
+        "type": "Text",
+        "config": {
+          "label": " Email Address",
+          "placeholder": ""
+        }
+      },
+      "copyright": {
+        "type": "Text",
+        "config": {
+          "label": "Copyright Message",
+          "placeholder": ""
+        }
       }
     }
   }
