@@ -40,7 +40,7 @@ export default async function Footer() {
           </div>
 
           <div className="flex flex-col items-center gap-4 sm:items-start">
-            <NavLinks navLinks={navLinks} theme="dark" />
+            <NavLinks navLinks={navLinks} theme="dark" cta={false} />
           </div>
         </div>
 

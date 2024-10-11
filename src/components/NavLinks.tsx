@@ -6,10 +6,13 @@ import { cn } from "@/lib/utils"
 type Props = {
   navLinks: Content.SettingsDocumentData["navLinks"]
   theme: "light" | "dark"
+  cta: boolean
 }
 
-export default function NavLinks({ navLinks, theme }: Props) {
-  return navLinks.slice(0, -1).map(({ link, isCta }, i) =>
+export default function NavLinks({ navLinks, theme, cta }: Props) {
+  const links = cta ? navLinks.slice(0, -1) : navLinks
+
+  return links.map(({ link, isCta }, i) =>
     isCta ? (
       <Button key={`nav-link-${i}`} link={link} size="sm" className="w-fit">
         {link.text}

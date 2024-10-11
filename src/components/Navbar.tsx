@@ -25,7 +25,7 @@ export default function Navbar({ navLinks }: Props) {
 
         {/* Desktop Navigation */}
         <div className="hidden items-center gap-6 text-base lg:flex">
-          <NavLinks navLinks={navLinks} theme="light" />
+          <NavLinks navLinks={navLinks} theme="light" cta />
         </div>
 
         <div className="block text-primary-100 lg:hidden">
@@ -49,7 +49,7 @@ export default function Navbar({ navLinks }: Props) {
             transition={{ duration: 0.2 }}
             className="flex h-screen flex-col place-items-center gap-4 py-8 text-center text-lg lg:hidden"
           >
-            <NavLinks navLinks={navLinks} theme="light" />
+            <NavLinks navLinks={navLinks} theme="light" cta />
           </motion.div>
         )}
       </AnimatePresence>
