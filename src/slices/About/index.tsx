@@ -19,6 +19,7 @@ const About = ({ slice }: AboutProps): JSX.Element => {
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
+      id="about"
       className="bg-primary-800 text-primary-100"
     >
       <div className="container mx-auto grid grid-cols-1 gap-8 px-8 py-8 sm:grid-cols-[1fr,2fr] sm:gap-4 md:gap-12 lg:py-24 xl:py-32">
@@ -34,7 +35,7 @@ const About = ({ slice }: AboutProps): JSX.Element => {
             {asText(heading)}
           </h2>
 
-          <div className="prose prose-base sm:prose-lg lg:prose-xl mt-6 text-primary-100 md:mt-8">
+          <div className="prose prose-base mt-6 text-primary-100 sm:prose-lg lg:prose-xl md:mt-8">
             <PrismicRichText field={content} />
           </div>
         </div>

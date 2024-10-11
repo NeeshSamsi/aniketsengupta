@@ -46,53 +46,51 @@ const Publications = async ({
   const categories = await client.getAllByType("category")
 
   return (
-    <section
+    <Section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
+      id="publications"
+      heading={asText(heading)}
+      subheading={asText(subheading)}
+      className="bg-primary-100 text-primary-800"
     >
-      <Section
-        heading={asText(heading)}
-        subheading={asText(subheading)}
-        className="bg-primary-100 text-primary-800"
-      >
-        <div className="hidden items-center gap-2 overflow-x-scroll text-primary-700 sm:flex sm:flex-col sm:items-start">
-          <Category text="All" selected />
-          {categories.map(({ id, data: { name } }) => (
-            <Category
-              key={id}
-              text={asText(name)}
-              selected={false}
-              className="text-start"
-            />
-          ))}
-        </div>
+      <div className="hidden items-center gap-2 overflow-x-scroll text-primary-700 sm:flex sm:flex-col sm:items-start">
+        <Category text="All" selected />
+        {categories.map(({ id, data: { name } }) => (
+          <Category
+            key={id}
+            text={asText(name)}
+            selected={false}
+            className="text-start"
+          />
+        ))}
+      </div>
 
-        <div className="grid gap-4 sm:gap-6">
-          {publications.map(({ slug, pubDate, title, category }) => (
-            <Link
-              href={`/publications/${slug}`}
-              key={slug}
-              className="group flex justify-between gap-8 border-b border-primary-600 pb-4 sm:pb-6"
-            >
-              <div className="space-y-4">
-                <h3 className="font-serif text-xl transition-colors group-hover:text-primary-700 sm:text-2xl lg:text-3xl">
-                  {asText(title)}
-                </h3>
-                <div className="flex items-center gap-2 text-primary-700 sm:gap-4">
-                  <p>{new Date(pubDate).getFullYear()}</p>
-                  <div className="size-1 rounded-full bg-primary-700" />
-                  <p>{category}</p>
-                </div>
+      <div className="grid gap-4 sm:gap-6">
+        {publications.map(({ slug, pubDate, title, category }) => (
+          <Link
+            href={`/publications/${slug}`}
+            key={slug}
+            className="group flex justify-between gap-8 border-b border-primary-600 pb-4 sm:pb-6"
+          >
+            <div className="space-y-4">
+              <h3 className="font-serif text-xl transition-colors group-hover:text-primary-700 sm:text-2xl lg:text-3xl">
+                {asText(title)}
+              </h3>
+              <div className="flex items-center gap-2 text-primary-700 sm:gap-4">
+                <p>{new Date(pubDate).getFullYear()}</p>
+                <div className="size-1 rounded-full bg-primary-700" />
+                <p>{category}</p>
               </div>
-              <FiArrowUpRight
-                strokeWidth={1.5}
-                className="size-16 transition-all group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-primary-700 sm:size-12"
-              />
-            </Link>
-          ))}
-        </div>
-      </Section>
-    </section>
+            </div>
+            <FiArrowUpRight
+              strokeWidth={1.5}
+              className="size-16 transition-all group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-primary-700 sm:size-12"
+            />
+          </Link>
+        ))}
+      </div>
+    </Section>
   )
 }
 

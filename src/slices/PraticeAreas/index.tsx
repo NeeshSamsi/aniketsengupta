@@ -25,6 +25,7 @@ const AccordionInfo = ({ slice }: AccordionInfoProps): JSX.Element => {
     <Section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
+      id="practice-areas"
       heading={asText(heading)}
       subheading={asText(subheading)}
       className="bg-primary-100 text-primary-800"
