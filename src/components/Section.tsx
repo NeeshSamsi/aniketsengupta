@@ -15,7 +15,7 @@ export default function Section({
 }: Props) {
   return (
     <section className={className}>
-      <div className="container mx-auto grid grid-cols-1 gap-8 px-8 py-8 sm:grid-cols-[1fr,4fr] md:gap-12 lg:py-24 xl:py-32">
+      <div className="container mx-auto grid grid-cols-1 gap-8 px-8 py-12 sm:grid-cols-[1fr,4fr] md:gap-12 lg:py-24 xl:py-40">
         <div className="grid grid-cols-[subgrid] gap-1 sm:col-span-2 sm:gap-4 md:gap-6">
           <h2 className="text-xs font-medium uppercase sm:text-sm lg:text-base">
             {subheading}
