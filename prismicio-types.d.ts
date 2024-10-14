@@ -76,6 +76,7 @@ export type CategoryDocument<Lang extends string = string> =
   >
 
 type PageDocumentDataSlicesSlice =
+  | CallToActionSlice
   | PublicationsSlice
   | AboutSlice
   | AccordionInfoSlice
@@ -502,6 +503,96 @@ export type AccordionInfoSlice = prismic.SharedSlice<
 >
 
 /**
+ * Item in *CallToAction → Default → Primary → CTA Buttons*
+ */
+export interface CallToActionSliceDefaultPrimaryCtasItem {
+  /**
+   * Button field in *CallToAction → Default → Primary → CTA Buttons*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: call_to_action.default.primary.ctas[].button
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  button: prismic.LinkField
+}
+
+/**
+ * Primary content in *CallToAction → Default → Primary*
+ */
+export interface CallToActionSliceDefaultPrimary {
+  /**
+   * Subheading field in *CallToAction → Default → Primary*
+   *
+   * - **Field Type**: Title
+   * - **Placeholder**: *None*
+   * - **API ID Path**: call_to_action.default.primary.subheading
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  subheading: prismic.TitleField
+
+  /**
+   * Heading field in *CallToAction → Default → Primary*
+   *
+   * - **Field Type**: Title
+   * - **Placeholder**: *None*
+   * - **API ID Path**: call_to_action.default.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  heading: prismic.TitleField
+
+  /**
+   * Paragraph field in *CallToAction → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: call_to_action.default.primary.paragraph
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  paragraph: prismic.RichTextField
+
+  /**
+   * CTA Buttons field in *CallToAction → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: call_to_action.default.primary.ctas[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  ctas: prismic.GroupField<Simplify<CallToActionSliceDefaultPrimaryCtasItem>>
+}
+
+/**
+ * Default variation for CallToAction Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type CallToActionSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<CallToActionSliceDefaultPrimary>,
+  never
+>
+
+/**
+ * Slice variation for *CallToAction*
+ */
+type CallToActionSliceVariation = CallToActionSliceDefault
+
+/**
+ * CallToAction Shared Slice
+ *
+ * - **API ID**: `call_to_action`
+ * - **Description**: CallToAction
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type CallToActionSlice = prismic.SharedSlice<
+  "call_to_action",
+  CallToActionSliceVariation
+>
+
+/**
  * Primary content in *Hero → Default → Primary*
  */
 export interface HeroSliceDefaultPrimary {
@@ -672,6 +763,11 @@ declare module "@prismicio/client" {
       AccordionInfoSliceDefaultPrimary,
       AccordionInfoSliceVariation,
       AccordionInfoSliceDefault,
+      CallToActionSlice,
+      CallToActionSliceDefaultPrimaryCtasItem,
+      CallToActionSliceDefaultPrimary,
+      CallToActionSliceVariation,
+      CallToActionSliceDefault,
       HeroSlice,
       HeroSliceDefaultPrimary,
       HeroSliceVariation,
