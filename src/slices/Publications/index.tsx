@@ -1,6 +1,6 @@
 import Section from "@/components/Section"
+import { SidebarItem } from "@/components/Sidebar"
 import { client } from "@/lib/prismic"
-import { cn } from "@/lib/utils"
 import { asText, Content } from "@prismicio/client"
 import { SliceComponentProps } from "@prismicio/react"
 import Link from "next/link"
@@ -55,9 +55,9 @@ const Publications = async ({
       className="bg-primary-100 text-primary-800"
     >
       <div className="hidden items-center gap-2 overflow-x-scroll text-primary-700 sm:flex sm:flex-col sm:items-start">
-        <Category text="All" selected />
+        <SidebarItem text="All" selected />
         {categories.map(({ id, data: { name } }) => (
-          <Category
+          <SidebarItem
             key={id}
             text={asText(name)}
             selected={false}
@@ -91,31 +91,6 @@ const Publications = async ({
         ))}
       </div>
     </Section>
-  )
-}
-
-function Category({
-  text,
-  selected,
-  className,
-}: {
-  text: string
-  selected: boolean
-  className?: string
-}) {
-  return (
-    <button
-      className={cn(
-        "transition-all hover:font-medium hover:text-primary-800",
-        className,
-        {
-          "font-semibold text-primary-800 hover:font-semibold": selected,
-        },
-      )}
-    >
-      {selected && <span>• </span>}
-      {text}
-    </button>
   )
 }
 
