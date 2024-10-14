@@ -1,0 +1,74 @@
+{
+  "id": "offices",
+  "type": "SharedSlice",
+  "name": "Offices",
+  "description": "Offices",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "offices": {
+          "type": "Group",
+          "config": {
+            "label": "Offices",
+            "repeat": true,
+            "fields": {
+              "mapImage": {
+                "type": "Image",
+                "config": {
+                  "label": "Map Screenshot",
+                  "constraint": {},
+                  "thumbnails": []
+                }
+              },
+              "city": {
+                "type": "Text",
+                "config": {
+                  "label": "City",
+                  "placeholder": ""
+                }
+              },
+              "address": {
+                "type": "Text",
+                "config": {
+                  "label": "Address",
+                  "placeholder": ""
+                }
+              },
+              "mapsLink": {
+                "type": "Link",
+                "config": {
+                  "label": "Google Maps Link",
+                  "placeholder": "",
+                  "allowTargetBlank": true,
+                  "select": null,
+                  "allowText": false
+                }
+              }
+            }
+          }
+        },
+        "email": {
+          "type": "Text",
+          "config": {
+            "label": "Email",
+            "placeholder": ""
+          }
+        },
+        "number": {
+          "type": "Text",
+          "config": {
+            "label": "Phone Number",
+            "placeholder": ""
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

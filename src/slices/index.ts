@@ -7,5 +7,6 @@ export const components = {
   accordion_info: dynamic(() => import("./PraticeAreas")),
   call_to_action: dynamic(() => import("./CallToAction")),
   hero: dynamic(() => import("./Hero")),
+  offices: dynamic(() => import("./Offices")),
   publications: dynamic(() => import("./Publications")),
 }

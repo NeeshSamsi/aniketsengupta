@@ -76,6 +76,7 @@ export type CategoryDocument<Lang extends string = string> =
   >
 
 type PageDocumentDataSlicesSlice =
+  | OfficesSlice
   | CallToActionSlice
   | PublicationsSlice
   | AboutSlice
@@ -665,6 +666,113 @@ type HeroSliceVariation = HeroSliceDefault
 export type HeroSlice = prismic.SharedSlice<"hero", HeroSliceVariation>
 
 /**
+ * Item in *Offices → Default → Primary → Offices*
+ */
+export interface OfficesSliceDefaultPrimaryOfficesItem {
+  /**
+   * Map Screenshot field in *Offices → Default → Primary → Offices*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: offices.default.primary.offices[].mapImage
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  mapImage: prismic.ImageField<never>
+
+  /**
+   * City field in *Offices → Default → Primary → Offices*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: offices.default.primary.offices[].city
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  city: prismic.KeyTextField
+
+  /**
+   * Address field in *Offices → Default → Primary → Offices*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: offices.default.primary.offices[].address
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  address: prismic.KeyTextField
+
+  /**
+   * Google Maps Link field in *Offices → Default → Primary → Offices*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: offices.default.primary.offices[].mapsLink
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  mapsLink: prismic.LinkField
+}
+
+/**
+ * Primary content in *Offices → Default → Primary*
+ */
+export interface OfficesSliceDefaultPrimary {
+  /**
+   * Offices field in *Offices → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: offices.default.primary.offices[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  offices: prismic.GroupField<Simplify<OfficesSliceDefaultPrimaryOfficesItem>>
+
+  /**
+   * Email field in *Offices → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: offices.default.primary.email
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  email: prismic.KeyTextField
+
+  /**
+   * Phone Number field in *Offices → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: offices.default.primary.number
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  number: prismic.KeyTextField
+}
+
+/**
+ * Default variation for Offices Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type OfficesSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<OfficesSliceDefaultPrimary>,
+  never
+>
+
+/**
+ * Slice variation for *Offices*
+ */
+type OfficesSliceVariation = OfficesSliceDefault
+
+/**
+ * Offices Shared Slice
+ *
+ * - **API ID**: `offices`
+ * - **Description**: Offices
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type OfficesSlice = prismic.SharedSlice<"offices", OfficesSliceVariation>
+
+/**
  * Primary content in *Publications → Default → Primary*
  */
 export interface PublicationsSliceDefaultPrimary {
@@ -772,6 +880,11 @@ declare module "@prismicio/client" {
       HeroSliceDefaultPrimary,
       HeroSliceVariation,
       HeroSliceDefault,
+      OfficesSlice,
+      OfficesSliceDefaultPrimaryOfficesItem,
+      OfficesSliceDefaultPrimary,
+      OfficesSliceVariation,
+      OfficesSliceDefault,
       PublicationsSlice,
       PublicationsSliceDefaultPrimary,
       PublicationsSliceVariation,
