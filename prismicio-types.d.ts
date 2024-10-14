@@ -715,6 +715,26 @@ export interface OfficesSliceDefaultPrimaryOfficesItem {
  */
 export interface OfficesSliceDefaultPrimary {
   /**
+   * Subheading field in *Offices → Default → Primary*
+   *
+   * - **Field Type**: Title
+   * - **Placeholder**: *None*
+   * - **API ID Path**: offices.default.primary.subheading
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  subheading: prismic.TitleField
+
+  /**
+   * Heading field in *Offices → Default → Primary*
+   *
+   * - **Field Type**: Title
+   * - **Placeholder**: *None*
+   * - **API ID Path**: offices.default.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  heading: prismic.TitleField
+
+  /**
    * Offices field in *Offices → Default → Primary*
    *
    * - **Field Type**: Group
