@@ -65,7 +65,7 @@
                   "placeholder": "",
                   "allowTargetBlank": true,
                   "select": null,
-                  "allowText": false
+                  "allowText": true
                 }
               }
             }
