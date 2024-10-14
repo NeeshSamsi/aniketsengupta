@@ -10,7 +10,7 @@ type Props = {
 }
 
 export default function NavLinks({ navLinks, theme, cta }: Props) {
-  const links = cta ? navLinks.slice(0, -1) : navLinks
+  const links = !cta ? navLinks.slice(0, -1) : navLinks
 
   return links.map(({ link, isCta }, i) =>
     isCta ? (
