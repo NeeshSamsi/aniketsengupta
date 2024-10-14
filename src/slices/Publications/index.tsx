@@ -85,7 +85,7 @@ const Publications = async ({
             </div>
             <FiArrowUpRight
               strokeWidth={1.5}
-              className="size-16 transition-all group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-primary-700 sm:size-12"
+              className="size-14 transition-all group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-primary-700 sm:size-16"
             />
           </Link>
         ))}
