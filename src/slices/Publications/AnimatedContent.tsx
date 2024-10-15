@@ -69,7 +69,7 @@ export function AnimatedContent({
           scrollTrigger: {
             trigger: container.current,
             start: "top bottom-=20%",
-            toggleActions: "play none none resume",
+            toggleActions: "play none none reverse",
           },
         },
       )
