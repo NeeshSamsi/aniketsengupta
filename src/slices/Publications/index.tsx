@@ -26,7 +26,7 @@ const Publications = async ({
   )
     .map(
       ({
-        last_publication_date: pubDate,
+        first_publication_date: pubDate,
         uid: slug,
         data: { title, category },
       }) => ({
