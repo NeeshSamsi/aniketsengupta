@@ -2,7 +2,7 @@
 
 import { type RichTextField, type Content, asText } from "@prismicio/client"
 
-import { useEffect, useRef, useState } from "react"
+import { useRef, useState } from "react"
 import Link from "next/link"
 import { SidebarItem } from "@/components/Sidebar"
 import { FiArrowUpRight } from "react-icons/fi"
@@ -36,19 +36,8 @@ export function AnimatedContent({
   const container = useRef<HTMLDivElement>(null)
   gsap.registerPlugin(useGSAP, ScrollTrigger)
 
-  useEffect(() => {
-    setSelectedPublications(
-      publications.filter((pub) => {
-        if (selectedCategory === null) {
-          return true
-        } else {
-          return pub.category === selectedCategory
-        }
-      }),
-    )
-  }, [publications, selectedCategory])
-
   const prefersReducedMotion = usePrefersReducedMotion()
+
   useGSAP(
     () => {
       if (prefersReducedMotion) {
@@ -83,48 +72,50 @@ export function AnimatedContent({
         <SidebarItem
           text="All"
           selected={selectedCategory === null}
-          onClick={() => setSelectedCategory(null)}
+          onClick={() => {
+            setSelectedCategory(null)
+            setSelectedPublications(publications.filter(() => true))
+          }}
         />
         {categories.map((name, i) => (
           <SidebarItem
             key={`category-${i}`}
             text={asText(name)}
             selected={selectedCategory === asText(name)}
-            onClick={() => setSelectedCategory(asText(name))}
+            onClick={() => {
+              setSelectedCategory(asText(name))
+              setSelectedPublications(
+                publications.filter((pub) => pub.category === asText(name)),
+              )
+            }}
             className="text-start"
           />
         ))}
       </div>
 
       <div className="grid gap-4 sm:gap-6" ref={container}>
-        {selectedPublications
-          .filter((publication) =>
-            selectedCategory === null
-              ? true
-              : publication.category === selectedCategory,
-          )
-          .map(({ slug, pubDate, title, category }) => (
-            <Link
-              href={`/publications/${slug}`}
-              key={slug}
-              className="publication group flex justify-between gap-8 border-b border-primary-600 pb-4 sm:pb-6"
-            >
-              <div className="space-y-4">
-                <h3 className="font-serif text-xl transition-colors group-hover:text-primary-700 sm:text-2xl lg:text-3xl">
-                  {asText(title)}
-                </h3>
-                <div className="flex items-center gap-2 text-primary-700 sm:gap-4">
-                  <p>{new Date(pubDate).getFullYear()}</p>
-                  <div className="size-1 rounded-full bg-primary-700" />
-                  <p>{category}</p>
-                </div>
+        {selectedPublications.map(({ slug, pubDate, title, category }) => (
+          <Link
+            href={`/publications/${slug}`}
+            key={slug}
+            className="publication group flex justify-between gap-8 border-b border-primary-600 pb-4 sm:pb-6"
+          >
+            <div className="space-y-4">
+              <h3 className="font-serif text-xl transition-colors group-hover:text-primary-700 sm:text-2xl lg:text-3xl">
+                {asText(title)}
+              </h3>
+              <div className="flex items-center gap-2 text-primary-700 sm:gap-4">
+                <p>{new Date(pubDate).getFullYear()}</p>
+                <div className="size-1 rounded-full bg-primary-700" />
+                <p>{category}</p>
               </div>
-              <FiArrowUpRight
-                strokeWidth={1.5}
-                className="size-14 transition-all group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-primary-700 sm:size-16"
-              />
-            </Link>
-          ))}
+            </div>
+            <FiArrowUpRight
+              strokeWidth={1.5}
+              className="size-14 transition-all group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-primary-700 sm:size-16"
+            />
+          </Link>
+        ))}
       </div>
     </>
   )
