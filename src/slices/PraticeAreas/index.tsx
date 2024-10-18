@@ -36,7 +36,7 @@ const AccordionInfo = ({ slice }: AccordionInfoProps): JSX.Element => {
           <>
             <p className="number mt-5 hidden sm:block">( {i + 1} )</p>
 
-            <Accordion type="single" collapsible className="publication">
+            <Accordion type="single" collapsible className="practice-area">
               <AccordionItem value={title as string}>
                 <AccordionTrigger className="font-serif text-xl sm:text-2xl lg:text-3xl">
                   {title}
