@@ -109,13 +109,10 @@ export default function AnimatedContent({ offices, number, email }: Props) {
             <p className="address max-w-[25ch] text-primary-700">
               {selectedOffice.address}
             </p>
-            <PrismicNextLink
-              field={selectedOffice.mapsLink}
-              className="cta flex items-center gap-2"
-            >
+            <p className="cta flex items-center gap-2">
               <span className="">{selectedOffice.mapsLink.text}</span>
               <FiArrowUpRight className="size-5 sm:size-6" strokeWidth={1.5} />
-            </PrismicNextLink>
+            </p>
           </div>
         </PrismicNextLink>
         <div className="grid gap-6 sm:hidden">
@@ -136,16 +133,13 @@ export default function AnimatedContent({ offices, number, email }: Props) {
                 <p className="address max-w-[25ch] text-primary-700">
                   {address}
                 </p>
-                <PrismicNextLink
-                  field={mapsLink}
-                  className="cta flex items-center gap-2"
-                >
+                <p className="cta flex items-center gap-2">
                   <span className="">{mapsLink.text}</span>
                   <FiArrowUpRight
                     className="size-5 sm:size-6"
                     strokeWidth={1.5}
                   />
-                </PrismicNextLink>
+                </p>
               </div>
             </PrismicNextLink>
           ))}
