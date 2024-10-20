@@ -9,4 +9,5 @@ export const components = {
   hero: dynamic(() => import("./Hero")),
   offices: dynamic(() => import("./Offices")),
   publications: dynamic(() => import("./Publications")),
+  rich_text: dynamic(() => import("./RichText")),
 }
