@@ -5,6 +5,7 @@ import { Playfair_Display, Plus_Jakarta_Sans } from "next/font/google"
 import "./globals.css"
 import Navbar from "@/components/Navbar"
 import Footer from "@/components/Footer"
+import Disclaimer from "@/components/Disclaimer"
 
 const playfairDisplay = Playfair_Display({
   subsets: ["latin"],
@@ -32,12 +33,17 @@ export default async function RootLayout({
     data: { navLinks },
   } = await client.getSingle("settings")
 
+  const {
+    data: { heading, content },
+  } = await client.getSingle("disclaimer")
+
   return (
     <html lang="en" className="scroll-p-16 scroll-smooth">
       <body
         className={`${playfairDisplay.variable} ${plusJakartaSans.variable} font-sans antialiased`}
       >
         <Navbar navLinks={navLinks} />
+        <Disclaimer heading={heading} content={content} />
         {children}
         <Footer />
       </body>
