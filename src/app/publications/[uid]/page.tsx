@@ -39,7 +39,7 @@ export default async function Page({ params }: { params: Params }) {
 
   return (
     <div className="bg-primary-100 text-primary-800">
-      <div className="container mx-auto grid grid-cols-1 gap-8 px-8 pb-12 pt-24 md:grid-cols-[3fr,2fr] lg:pb-24 lg:pt-32 xl:pb-32 xl:pt-40">
+      <div className="container mx-auto grid grid-cols-1 gap-8 px-8 pb-12 pt-28 md:grid-cols-[3fr,2fr] lg:pb-24 lg:pt-40 xl:pb-32 xl:pt-48">
         <div className="flex flex-col gap-12">
           <main className="text-lg sm:text-xl lg:text-2xl">
             <div className="mb-4 flex items-center gap-2 text-primary-700 sm:gap-4">
