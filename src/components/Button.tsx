@@ -7,15 +7,29 @@ import { cn } from "@/lib/utils"
 type Props = {
   link?: LinkField
   size: "sm" | "base"
+  theme: "light" | "dark"
   className?: string
+  onClick?: () => void
   children: ReactNode
 }
 
-export default function Button({ children, link, size, className }: Props) {
+export default function Button({
+  children,
+  link,
+  size,
+  theme,
+  className,
+}: Props) {
   return (
     <button
       className={cn(
-        "bg-primary-100 font-medium text-primary-800 transition-colors hover:bg-primary-700 hover:text-primary-100",
+        "font-medium transition-colors",
+        {
+          "bg-primary-100 text-primary-800 hover:bg-primary-700 hover:text-primary-100":
+            theme === "light",
+          "bg-primary-800 text-primary-100 hover:bg-primary-700 hover:text-primary-100":
+            theme === "dark",
+        },
         {
           "px-3 py-2": size === "sm",
           "px-4 py-2 text-base sm:text-lg lg:px-6 lg:py-4 lg:text-xl":
