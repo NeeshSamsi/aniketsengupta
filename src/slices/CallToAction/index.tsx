@@ -14,13 +14,14 @@ export type CallToActionProps = SliceComponentProps<Content.CallToActionSlice>
  */
 const CallToAction = ({ slice }: CallToActionProps): JSX.Element => {
   const {
-    primary: { heading, subheading, paragraph, ctas },
+    primary: { sectionID, heading, subheading, paragraph, ctas },
   } = slice
 
   return (
     <Section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
+      id={sectionID!}
       heading={asText(heading)}
       subheading={asText(subheading)}
       className="bg-primary-800 text-primary-100"

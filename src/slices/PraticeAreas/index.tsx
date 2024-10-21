@@ -19,7 +19,7 @@ export type AccordionInfoProps = SliceComponentProps<Content.AccordionInfoSlice>
  */
 const AccordionInfo = ({ slice }: AccordionInfoProps): JSX.Element => {
   const {
-    primary: { heading, subheading, practiceAreas },
+    primary: { sectionID, heading, subheading, practiceAreas },
   } = slice
 
   return (
@@ -27,7 +27,7 @@ const AccordionInfo = ({ slice }: AccordionInfoProps): JSX.Element => {
       <Section
         data-slice-type={slice.slice_type}
         data-slice-variation={slice.variation}
-        id="practice-areas"
+        id={sectionID!}
         heading={asText(heading)}
         subheading={asText(subheading)}
         className="bg-primary-100 text-primary-800"

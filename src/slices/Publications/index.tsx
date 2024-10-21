@@ -16,7 +16,7 @@ const Publications = async ({
   slice,
 }: PublicationsProps): Promise<JSX.Element> => {
   const {
-    primary: { heading, subheading },
+    primary: { sectionID, heading, subheading },
   } = slice
 
   const publications = (
@@ -47,7 +47,7 @@ const Publications = async ({
     <Section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      id="publications"
+      id={sectionID!}
       heading={asText(heading)}
       subheading={asText(subheading)}
       className="bg-primary-100 text-primary-800"
