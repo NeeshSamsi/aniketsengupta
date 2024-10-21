@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import {
   Dialog,
   DialogClose,
@@ -21,6 +21,16 @@ type Props = {
 export default function Disclaimer({ heading, content }: Props) {
   const [open, setOpen] = useState(true)
 
+  useEffect(() => {
+    const showDisclaimer = localStorage.getItem("showDisclaimer")
+
+    if (showDisclaimer === "undefined" || showDisclaimer === "null") {
+      localStorage.setItem("showDisclaimer", "true")
+    }
+
+    if (showDisclaimer === "false") setOpen(false)
+  }, [])
+
   return (
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogContent className="space-y-6">
@@ -33,12 +43,14 @@ export default function Disclaimer({ heading, content }: Props) {
           </DialogDescription>
         </DialogHeader>
 
-        <DialogClose>
+        <DialogClose
+          onClick={() => localStorage.setItem("showDisclaimer", "false")}
+        >
           <Button
             size="base"
             theme="dark"
             className="w-full text-sm font-semibold sm:text-base lg:text-lg"
-            onClick={() => setOpen(false)}
+            onClick={() => localStorage.setItem("showDisclaimer", "false")}
           >
             Agree & Continue
           </Button>
