@@ -36,7 +36,12 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
           {asText(heading)}
         </h1>
 
-        <Button link={button} size="base" className="mt-6 xl:mt-10">
+        <Button
+          link={button}
+          size="base"
+          theme="light"
+          className="mt-6 xl:mt-10"
+        >
           {button.text}
         </Button>
       </div>

@@ -31,7 +31,7 @@ const CallToAction = ({ slice }: CallToActionProps): JSX.Element => {
         </div>
         <div className="mt-8 flex items-center gap-8">
           {ctas.map(({ button }, index) => (
-            <Button key={index} link={button} size="base">
+            <Button key={index} link={button} size="base" theme="light">
               <span className="flex items-center gap-2">
                 {button.text}
                 <FiArrowUpRight className="size-5 sm:size-6" />

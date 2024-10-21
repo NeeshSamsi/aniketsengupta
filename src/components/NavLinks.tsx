@@ -14,7 +14,13 @@ export default function NavLinks({ navLinks, theme, cta }: Props) {
 
   return links.map(({ link, isCta }, i) =>
     isCta ? (
-      <Button key={`nav-link-${i}`} link={link} size="sm" className="w-fit">
+      <Button
+        key={`nav-link-${i}`}
+        link={link}
+        size="sm"
+        theme="light"
+        className="w-fit"
+      >
         {link.text}
       </Button>
     ) : (
