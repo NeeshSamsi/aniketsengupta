@@ -62,7 +62,7 @@ export default async function Page({ params }: { params: Params }) {
         </div>
 
         <aside className="grid h-fit gap-6 bg-primary-300 px-8 py-6">
-          <p className="text-lg lg:text-2xl xl:py-32">Recent posts</p>
+          <p className="text-lg lg:text-2xl">Recent posts</p>
 
           <div className="grid gap-4">
             {publications
