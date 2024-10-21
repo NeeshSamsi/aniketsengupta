@@ -56,6 +56,11 @@
 						]
 					}
 				]
+			},
+			"sectionID": {
+				"__TYPE__": "FieldContent",
+				"value": "them",
+				"type": "Text"
 			}
 		},
 		"items": []

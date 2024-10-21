@@ -97,6 +97,11 @@
 						}
 					}
 				]
+			},
+			"sectionID": {
+				"__TYPE__": "FieldContent",
+				"value": "tail",
+				"type": "Text"
 			}
 		},
 		"items": []

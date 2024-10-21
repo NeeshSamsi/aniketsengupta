@@ -24,6 +24,11 @@
 						}
 					}
 				]
+			},
+			"sectionID": {
+				"__TYPE__": "FieldContent",
+				"value": "shadow",
+				"type": "Text"
 			}
 		},
 		"items": []

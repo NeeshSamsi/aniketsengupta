@@ -47,6 +47,11 @@
 				"alt": null,
 				"__TYPE__": "ImageContent",
 				"thumbnails": {}
+			},
+			"sectionID": {
+				"__TYPE__": "FieldContent",
+				"value": "means",
+				"type": "Text"
 			}
 		},
 		"items": []

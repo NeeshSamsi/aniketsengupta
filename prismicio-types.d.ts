@@ -398,6 +398,16 @@ export type AllDocumentTypes =
  */
 export interface AboutSliceDefaultPrimary {
   /**
+   * Section ID field in *About → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: about.default.primary.sectionID
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  sectionID: prismic.KeyTextField
+
+  /**
    * Image field in *About → Default → Primary*
    *
    * - **Field Type**: Image
@@ -485,6 +495,16 @@ export interface AccordionInfoSliceDefaultPrimaryPracticeAreasItem {
  */
 export interface AccordionInfoSliceDefaultPrimary {
   /**
+   * Section ID field in *PraticeAreas → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: accordion_info.default.primary.sectionID
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  sectionID: prismic.KeyTextField
+
+  /**
    * Subheading field in *PraticeAreas → Default → Primary*
    *
    * - **Field Type**: Title
@@ -566,6 +586,16 @@ export interface CallToActionSliceDefaultPrimaryCtasItem {
  * Primary content in *CallToAction → Default → Primary*
  */
 export interface CallToActionSliceDefaultPrimary {
+  /**
+   * Section ID field in *CallToAction → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: call_to_action.default.primary.sectionID
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  sectionID: prismic.KeyTextField
+
   /**
    * Subheading field in *CallToAction → Default → Primary*
    *
@@ -759,6 +789,16 @@ export interface OfficesSliceDefaultPrimaryOfficesItem {
  */
 export interface OfficesSliceDefaultPrimary {
   /**
+   * Section ID field in *Offices → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: offices.default.primary.sectionID
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  sectionID: prismic.KeyTextField
+
+  /**
    * Subheading field in *Offices → Default → Primary*
    *
    * - **Field Type**: Title
@@ -840,6 +880,16 @@ export type OfficesSlice = prismic.SharedSlice<"offices", OfficesSliceVariation>
  * Primary content in *Publications → Default → Primary*
  */
 export interface PublicationsSliceDefaultPrimary {
+  /**
+   * Section ID field in *Publications → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: publications.default.primary.sectionID
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  sectionID: prismic.KeyTextField
+
   /**
    * Subheading field in *Publications → Default → Primary*
    *
