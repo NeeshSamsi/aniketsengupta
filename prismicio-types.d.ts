@@ -75,6 +75,49 @@ export type CategoryDocument<Lang extends string = string> =
     Lang
   >
 
+/**
+ * Content for Disclaimer documents
+ */
+interface DisclaimerDocumentData {
+  /**
+   * Heading field in *Disclaimer*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: disclaimer.heading
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  heading: prismic.KeyTextField
+
+  /**
+   * Content field in *Disclaimer*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: disclaimer.content
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  content: prismic.RichTextField
+}
+
+/**
+ * Disclaimer document from Prismic
+ *
+ * - **API ID**: `disclaimer`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type DisclaimerDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<
+    Simplify<DisclaimerDocumentData>,
+    "disclaimer",
+    Lang
+  >
+
 type PageDocumentDataSlicesSlice =
   | OfficesSlice
   | CallToActionSlice
@@ -345,6 +388,7 @@ export type SettingsDocument<Lang extends string = string> =
 export type AllDocumentTypes =
   | AuthorDocument
   | CategoryDocument
+  | DisclaimerDocument
   | PageDocument
   | PublicationDocument
   | SettingsDocument
@@ -917,6 +961,8 @@ declare module "@prismicio/client" {
       AuthorDocumentData,
       CategoryDocument,
       CategoryDocumentData,
+      DisclaimerDocument,
+      DisclaimerDocumentData,
       PageDocument,
       PageDocumentData,
       PageDocumentDataSlicesSlice,
