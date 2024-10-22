@@ -20,7 +20,7 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="grid-stack min-h-dvh items-end"
+      className="grid-stack min-h-[80vh] items-end md:min-h-dvh"
     >
       <PrismicNextImage
         field={bgImage}
