@@ -10,4 +10,5 @@ export const components = {
   offices: dynamic(() => import("./Offices")),
   publications: dynamic(() => import("./Publications")),
   rich_text: dynamic(() => import("./RichText")),
+  team: dynamic(() => import("./Team")),
 }
