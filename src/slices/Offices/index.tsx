@@ -13,7 +13,15 @@ export type OfficesProps = SliceComponentProps<Content.OfficesSlice>
  */
 const Offices = ({ slice }: OfficesProps): JSX.Element => {
   const {
-    primary: { sectionID, heading, subheading, offices, email, number },
+    primary: {
+      sectionID,
+      heading,
+      subheading,
+      description,
+      offices,
+      email,
+      number,
+    },
   } = slice
 
   return (
@@ -23,6 +31,7 @@ const Offices = ({ slice }: OfficesProps): JSX.Element => {
       id={sectionID!}
       heading={asText(heading)}
       subheading={asText(subheading)}
+      description={description}
       className="bg-primary-300 text-primary-800"
     >
       <AnimatedContent offices={offices} email={email} number={number} />

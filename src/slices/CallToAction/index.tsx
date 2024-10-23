@@ -24,6 +24,7 @@ const CallToAction = ({ slice }: CallToActionProps): JSX.Element => {
       id={sectionID!}
       heading={asText(heading)}
       subheading={asText(subheading)}
+      description={null}
       className="bg-primary-800 text-primary-100"
     >
       <div className="col-start-2">

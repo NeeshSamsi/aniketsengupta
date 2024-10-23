@@ -19,7 +19,7 @@ export type AccordionInfoProps = SliceComponentProps<Content.AccordionInfoSlice>
  */
 const AccordionInfo = ({ slice }: AccordionInfoProps): JSX.Element => {
   const {
-    primary: { sectionID, heading, subheading, practiceAreas },
+    primary: { sectionID, heading, subheading, description, practiceAreas },
   } = slice
 
   return (
@@ -30,6 +30,7 @@ const AccordionInfo = ({ slice }: AccordionInfoProps): JSX.Element => {
         id={sectionID!}
         heading={asText(heading)}
         subheading={asText(subheading)}
+        description={description}
         className="bg-primary-100 text-primary-800"
       >
         {practiceAreas.map(({ title, description }, i) => (

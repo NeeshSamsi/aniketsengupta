@@ -16,7 +16,7 @@ const Publications = async ({
   slice,
 }: PublicationsProps): Promise<JSX.Element> => {
   const {
-    primary: { sectionID, heading, subheading },
+    primary: { sectionID, heading, subheading, description },
   } = slice
 
   const publications = (
@@ -50,6 +50,7 @@ const Publications = async ({
       id={sectionID!}
       heading={asText(heading)}
       subheading={asText(subheading)}
+      description={description}
       className="bg-primary-100 text-primary-800"
     >
       <AnimatedContent publications={publications} categories={categories} />

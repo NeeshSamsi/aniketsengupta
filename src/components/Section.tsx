@@ -1,8 +1,10 @@
+import { KeyTextField } from "@prismicio/client"
 import { type ReactNode } from "react"
 
 type Props = {
   heading: string
   subheading: string
+  description: KeyTextField | null
   children: ReactNode
   id?: string
   className?: string
@@ -11,6 +13,7 @@ type Props = {
 export default function Section({
   heading,
   subheading,
+  description,
   children,
   className,
   id,
@@ -25,6 +28,12 @@ export default function Section({
           <p className="font-serif text-3xl sm:text-4xl lg:text-5xl">
             {heading}
           </p>
+
+          {description && (
+            <p className="col-start-2 text-base sm:text-lg lg:text-xl">
+              {description}
+            </p>
+          )}
         </div>
         <div className="grid grid-cols-[subgrid] gap-4 text-base sm:col-span-2 sm:text-lg md:gap-6 lg:text-xl">
           {children}
