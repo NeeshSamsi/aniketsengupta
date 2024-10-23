@@ -26,7 +26,7 @@ const Team = ({ slice }: TeamProps): JSX.Element => {
       description={description}
       className="bg-primary-800 text-primary-100"
     >
-      <div className="col-start-2 grid grid-cols-2 gap-6 md:grid-cols-3 lg:grid-cols-4">
+      <div className="col-start-2 grid grid-cols-2 gap-6 md:grid-cols-3 xl:grid-cols-4">
         {members.map(({ portrait, name, designation }, index) => (
           <div key={`team-member-${index}`} className="flex flex-col gap-2">
             <PrismicNextImage
