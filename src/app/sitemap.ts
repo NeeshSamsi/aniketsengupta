@@ -1,5 +1,6 @@
+import { type MetadataRoute } from "next"
 import { createClient } from "@/prismicio"
-import { MetadataRoute } from "next"
+import { url } from "@/lib/config"
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const client = createClient()
@@ -8,11 +9,11 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   return [
     {
-      url: "/",
+      url: url,
       lastModified: new Date(),
     },
     ...publications.map((publication) => ({
-      url: `/publications/${publication.uid}`,
+      url: `${url}/publications/${publication.uid}`,
       lastModified: new Date(publication.first_publication_date),
     })),
   ]
