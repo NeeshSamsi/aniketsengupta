@@ -29,6 +29,11 @@
 				"__TYPE__": "FieldContent",
 				"value": "shadow",
 				"type": "Text"
+			},
+			"description": {
+				"__TYPE__": "FieldContent",
+				"value": "symbol",
+				"type": "Text"
 			}
 		},
 		"items": []

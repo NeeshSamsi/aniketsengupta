@@ -61,6 +61,11 @@
 				"__TYPE__": "FieldContent",
 				"value": "them",
 				"type": "Text"
+			},
+			"description": {
+				"__TYPE__": "FieldContent",
+				"value": "such",
+				"type": "Text"
 			}
 		},
 		"items": []

@@ -37,6 +37,13 @@
             "single": "heading2"
           }
         },
+        "description": {
+          "type": "Text",
+          "config": {
+            "label": "Description",
+            "placeholder": ""
+          }
+        },
         "offices": {
           "type": "Group",
           "config": {

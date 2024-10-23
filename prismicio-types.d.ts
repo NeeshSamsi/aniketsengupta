@@ -525,6 +525,16 @@ export interface AccordionInfoSliceDefaultPrimary {
   heading: prismic.TitleField
 
   /**
+   * Description field in *PraticeAreas → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: accordion_info.default.primary.description
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  description: prismic.KeyTextField
+
+  /**
    * Practice Areas field in *PraticeAreas → Default → Primary*
    *
    * - **Field Type**: Group
@@ -819,6 +829,16 @@ export interface OfficesSliceDefaultPrimary {
   heading: prismic.TitleField
 
   /**
+   * Description field in *Offices → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: offices.default.primary.description
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  description: prismic.KeyTextField
+
+  /**
    * Offices field in *Offices → Default → Primary*
    *
    * - **Field Type**: Group
@@ -909,6 +929,16 @@ export interface PublicationsSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   heading: prismic.TitleField
+
+  /**
+   * Description field in *Publications → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: publications.default.primary.description
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  description: prismic.KeyTextField
 }
 
 /**

@@ -102,6 +102,11 @@
 				"__TYPE__": "FieldContent",
 				"value": "tail",
 				"type": "Text"
+			},
+			"description": {
+				"__TYPE__": "FieldContent",
+				"value": "pine",
+				"type": "Text"
 			}
 		},
 		"items": []
